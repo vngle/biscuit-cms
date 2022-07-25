@@ -13,7 +13,7 @@ export const zipUrl = []
 export default function Story() {
   const {id} = useParams() ;
   const [cookies] = useCookies(['token']);
-  const { loading, error, data } = useFetch(`http://localhost:1337/api/stories/${id}?populate=Media`, cookies.token);
+  const { loading, error, data } = useFetch(`http://localhost:1338/api/stories/${id}?populate=Media`, cookies.token);
 
   if (loading) return <p>Loading...</p>
 
@@ -40,9 +40,9 @@ export default function Story() {
               
               img.attributes.mime.includes('video')
                   ?
-                    zipUrl.push(`http://localhost:1337${img.attributes.url}`)
+                    zipUrl.push(`http://localhost:1338${img.attributes.url}`)
                   :
-                    zipUrl.push(`http://localhost:1337${img.attributes.url}`);
+                    zipUrl.push(`http://localhost:1338${img.attributes.url}`);
                   
               return(
                 <div className='img-container' key={img.id}>
@@ -51,12 +51,12 @@ export default function Story() {
                     <video 
                     className='img'
                     controls 
-                    src={`http://localhost:1337${img.attributes.url}`}
+                    src={`http://localhost:1338${img.attributes.url}`}
                     />
                   :
                     <img 
                     className='img'
-                    src={`http://localhost:1337${img.attributes.url}`}
+                    src={`http://localhost:1338${img.attributes.url}`}
                     />
                   }
                   
@@ -66,10 +66,10 @@ export default function Story() {
                     onClick={() => 
                       {img.attributes.mime.includes('video')
                       ?
-                        (handleclick(`http://localhost:1337${data.data.attributes.Media.data[index].attributes.url}`,
+                        (handleclick(`http://localhost:1338${data.data.attributes.Media.data[index].attributes.url}`,
                         `video.webm`))
                       :
-                        (handleclick(`http://localhost:1337${data.data.attributes.Media.data[index].attributes.url}`,
+                        (handleclick(`http://localhost:1338${data.data.attributes.Media.data[index].attributes.url}`,
                         `${data.data.attributes.Media.data[index].attributes.alternativeText}`))
                       }
                     }/>

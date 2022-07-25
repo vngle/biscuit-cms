@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 const VerifyToken = (token) => {
     //const location = useLocation()
     const [cookies] = useCookies(['token'])
-    const url = 'http://localhost:1337/api/reviews'
+    const url = 'http://localhost:1338/api/reviews'
 
     const VerifyCall = async () => {    
         fetch(url, {

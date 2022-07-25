@@ -22,7 +22,7 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:1337/api/auth/local', {
+      .post('http://localhost:1338/api/auth/local', {
       identifier: formData.userName,
       password: formData.password
       })

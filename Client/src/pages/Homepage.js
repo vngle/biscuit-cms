@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie'
 
 export default function Homepage() {
   const [cookies] = useCookies(['token']);
-  const { loading, error, data } = useFetch('http://localhost:1337/api/stories?populate=Media', cookies.token)
+  const { loading, error, data } = useFetch('http://localhost:1338/api/stories?populate=Media', cookies.token)
 
   if (loading) return <p>Loading...</p>;
 
@@ -33,7 +33,7 @@ export default function Homepage() {
                     <video key={img.id}
                     className='img'
                     controls 
-                    src={`http://localhost:1337${img.attributes.url}`}
+                    src={`http://localhost:1338${img.attributes.url}`}
                     />
                   :
                   img.attributes.ext == '.webm'
@@ -41,12 +41,12 @@ export default function Homepage() {
                   <video key={img.id}
                   className='img'
                   controls 
-                  src={`http://localhost:1337${img.attributes.url}`}
+                  src={`http://localhost:1338${img.attributes.url}`}
                 />
                   :
                     <img key={img.id}
                     className='img'
-                    src={`http://localhost:1337${img.attributes.url}`}
+                    src={`http://localhost:1338${img.attributes.url}`}
                     />
                   }
                 </div>
